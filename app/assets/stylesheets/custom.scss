@@ -3,3 +3,445 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+/*************************************************/
+/* 
+/*  Table of content
+/*
+/*  00. Basics
+/*  01. Margins
+/*  02. Header
+/*  03. Navbar
+/*  04. Footer
+/*  05. Welcome / Call action
+/*  06. Images
+/*  07. Auth page
+/*  08. Budgets page
+/*  09. Jumbo Budget
+/*
+/*************************************************/
+
+/*************************************************/
+/* 00. Basics */
+/*************************************************/
+.button-secondary {
+    background-color: $secondary;
+}
+/*************************************************/
+/* 02. Header */
+/*************************************************/
+header {
+    background: #fff;
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+  
+    .top-links {
+      background: $black;
+    }
+  
+    .selected {
+      border-bottom: 1px solid #fff;
+    }
+  
+    .locale {
+      float: left;
+      height: $line-height * 1.5;
+      margin-left: $line-height / 2;
+    }
+  
+    .external-links {
+      float: none;
+      padding: rem-calc(6) 0;
+      text-align: center;
+  
+      @include breakpoint(medium) {
+        float: right;
+      }
+    }
+  }
+  .wrapper-image-fullwidth {
+    width: 100%;
+    max-width: 100%;
+  
+    img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
+  }
+  #header-img {
+    background-image: image-url("header_jumbotron.png");
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin-top: -$line-height;
+    position: relative;
+  
+    h1 {
+      text-align: center;
+      margin-top: 175px;
+      color: #fff;
+      padding: 15px;
+      font-size: 27px;
+    }
+    .title-top-header {
+        width: auto;
+        position: relative;
+        bottom: -55px;
+        right: 0px;
+
+      .button {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+    }
+  }
+  
+  .title-header {
+    text-align: center;
+    font-size: 20px;
+    max-width: 460px;
+  }
+  
+  .title-header h1 {
+    margin: 0px;
+  }
+  @include breakpoint(medium only) {
+    .title-header {
+      font-size: 15px;
+    }
+    .title-header h1,.title-header .h1 {
+      font-size: 2rem;
+    }
+  }
+  @include breakpoint(small only) {
+    .title-header {
+      font-size: 10px;
+    }
+  
+   .title-header h1,.title-header .h1 {
+      font-size: 1.5rem;
+    }
+  
+  }
+
+
+/*************************************************/
+/* 03. Navbar */
+/*************************************************/
+
+.info-link a {
+    color: #fff !important;
+ }
+ 
+ .menu-icon.dark::after {
+   background: $brand;
+   -webkit-box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+   box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
+ }
+ .menu-icon.dark:hover::after {
+   background: black;
+   -webkit-box-shadow: 0 7px 0 black, 0 14px 0 black;
+   box-shadow: 0 7px 0 black, 0 14px 0 black;
+ }
+ 
+ .subnavigation {
+   background: #FFFFFF !important;
+   color: $black;
+   
+   @include breakpoint(medium) {
+     background: $light;
+     color: $text;
+     padding-bottom: 0;
+   }
+ 
+   ul {
+     list-style-type: none;
+     margin: 0;
+     display: table;
+     width: 100%;
+       @include breakpoint(small only) {
+         padding-right: 0px;
+       }
+ 
+     li {
+       /*border-left: 1px solid $light;*/
+       vertical-align: middle;
+       background: #FFFFFF;
+       margin-right: 0px !important;
+       position: relative;
+ 
+       @include breakpoint(medium) {
+         display: table-cell;
+         margin-right: rem-calc(20);
+       }
+       @include breakpoint(small only) {
+         border-left: none;
+         padding-left: 10px;
+       }
+ 
+       a {
+         color: $black;
+       }
+     }
+     li:first-child {
+       border-left: none;
+     }
+     li:hover {
+       background: $brand;
+ 
+       a {
+         color: #fff;
+       }
+     }
+     li.parent:before {
+       @include breakpoint(small only){
+         position: absolute;
+         top: 20px;
+         right: 30px;
+         border-top: 8px solid #fff;
+         border-left: 6px solid transparent;
+         border-right: 6px solid transparent;
+         content: "";
+         display: block;
+       }
+     }
+     li.parent.is-active:before {
+       display: none;
+     }
+     li.parent.is-active:after {
+       @include breakpoint(small only) {
+         position: absolute;
+         top: 20px;
+         right: 30px;
+         border-bottom: 8px solid #fff;
+         border-left: 6px solid transparent;
+         border-right: 6px solid transparent;
+         content: "";
+         display: block;
+       }
+     }
+ 
+     li > ul {
+       display: none;
+       position: absolute;
+       width: auto;
+       z-index: 999;
+ 
+       @include breakpoint(small only){
+         width: calc(100% - 5px);
+       }
+     }
+     li:hover > ul {
+       display: block;
+ 
+       @include breakpoint(small only){
+         position: relative;
+       }
+ 
+       li {
+         display: block;
+         background: $dark;;
+         border-top: 1px solid #fff;
+         white-space: nowrap;
+         a {
+           text-align: left;
+         }
+       }
+     }
+   }
+ 
+   a { 
+     color: #fff;
+     display: inline-block;
+     line-height: $line-height * 2;
+     padding: 0px 10px;
+     position: relative;
+     text-align: center;
+     width: 100%;
+     font-weight: normal;
+     text-transform: uppercase;
+     font-size: $small-font-size;
+ 
+     @include breakpoint(medium) {
+       color: $text;
+       display: block;
+       width: auto;
+ 
+       &:hover {
+         /*color: $text;*/
+       }
+     }
+     @include breakpoint(small only) {
+       color: $text;
+       text-align: left;
+       padding-left: 0px;
+       text-transform: capitalize;
+       font-size: 17px;
+     }
+ 
+     &.is-active {
+       color: #fff !important;
+ 
+       @include breakpoint(medium) {
+         border-bottom: 2px solid $brand;
+         color: $brand;
+       }
+     }
+   }
+ 
+   .input-group {
+     padding-top: $line-height / 4;
+ 
+     @include breakpoint(medium) {
+       margin-bottom: 0;
+     }
+   }
+ 
+   .input-group-field {
+     margin-bottom: 0 !important;
+   }
+ 
+   .input-group-button {
+     line-height: $line-height * 1.5;
+     padding-bottom: 0;
+ 
+     button {
+       background: $border;
+       border: 1px solid #ccc;
+       border-left: 0;
+       color: $text;
+       height: $line-height * 1.5;
+       line-height: $line-height * 1.5;
+       padding-top: 0;
+     }
+   }
+ 
+   input {
+     height: $line-height * 1.5 !important;
+     margin-bottom: 0;
+     margin-right: 0;
+     width: 100%;
+   }
+ 
+   .column {
+     @include breakpoint(small only) {
+       padding-left: 0px;
+       padding-right: 0px;
+     }
+   }
+ }
+ 
+ @media print, screen and (min-width: 40em){
+   .subnavigation ul li {
+       display: inline-block;
+   }
+ }
+ 
+ .top-bar-right {
+   
+   .is-active {
+     font-weight: bold;
+     text-decoration: underline;
+   }
+ 
+   .menu {
+     @include breakpoint(small only) {
+       padding-right: 0px;
+     }
+ 
+   }
+ }
+ 
+ .submenu {
+   border-bottom: 1px solid $border;
+   clear: both;
+   margin-bottom: $line-height / 2;
+ 
+   a {
+     color: $text;
+     display: inline-block;
+     font-weight: bold;
+     margin-right: $line-height / 2;
+     position: relative;
+     text-align: left;
+ 
+     @include breakpoint(medium) {
+       margin-right: $line-height;
+     }
+ 
+     &:hover {
+       color: $link;
+     }
+   }
+ 
+   .is-active {
+     border-bottom: 2px solid $brand;
+     color: $brand;
+ 
+     &:hover {
+       text-decoration: none;
+     }
+   }
+ 
+   h2 {
+     font-size: $base-font-size;
+   }
+ }
+ 
+ header {
+     background: #fff;
+ }
+ .top-bar {
+   background: #fff !important;
+   color: #0a0a0a;
+ 
+   @include breakpoint(medium) {
+     padding: 0;
+   }
+   @include breakpoint(small only) {
+     padding-right: 1.0rem;
+     
+     #responsive-menu {
+       display: block;
+       width: 100%;
+     }
+   }
+ 
+   .menu > li a {
+     color: #0a0a0a;
+ 
+     @include breakpoint(small only) {
+       color: $text;
+       padding-left: 10px;
+     }
+ 
+   }
+   .menu > li .button {
+       background: $brand;
+       color: #fff;
+       @include breakpoint(small only) {
+         padding-left: 10px;
+       }
+   }
+ 
+   .top-bar-title {
+     line-height: $line-height;
+ 
+     a img {
+       height: 65px;
+       margin: 0;
+       width: auto;
+ 
+       @include breakpoint(medium up) {
+         height: 100px;
+       }
+     }
+   }
+ }
+ 
+ .search-form-header [type=text] {
+   max-width: none;
+ }
