@@ -71,24 +71,41 @@ header {
   }
   #header-img {
     background-image: image-url("header_jumbotron.png");
-    height: 500px;
-    background-size: cover;
+    height: initial;
+    -webkit-background-size: contain;
+    background-size: contain;
     background-position: center;
     margin-top: -$line-height;
     position: relative;
-  
+    background-repeat: no-repeat;
+    background-position: top;
+    
+    @include breakpoint(small only) {
+      height: initial;
+    }
+
+
     h1 {
       text-align: center;
       margin-top: 175px;
       color: #fff;
       padding: 15px;
       font-size: 27px;
+
+      @include breakpoint(small only) {
+        margin-top: 75px;
+      }
     }
     .title-top-header {
         width: auto;
         position: relative;
         bottom: -55px;
         right: 0px;
+
+        @include breakpoint(small only) {
+          bottom: -30px;
+        }
+
 
       .button {
         display: block;
@@ -283,12 +300,16 @@ header {
      }
  
      &.is-active {
-       color: #fff !important;
+       color: $brand !important;
  
        @include breakpoint(medium) {
          border-bottom: 2px solid $brand;
          color: $brand;
        }
+     }
+
+     &:focus {
+      outline: none;
      }
    }
  
@@ -429,16 +450,25 @@ header {
  
    .top-bar-title {
      line-height: $line-height;
+     width: 100%;
  
      a img {
        height: 65px;
        margin: 0;
        width: auto;
+       object-fit: contain;
  
        @include breakpoint(medium up) {
          height: 100px;
        }
      }
+   }
+   @include breakpoint(medium up) {
+
+    .top-bar-title {
+      width: initial;
+    }
+
    }
  }
  
