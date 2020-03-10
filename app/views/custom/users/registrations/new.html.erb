@@ -1,0 +1,97 @@
+<% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
+<h2><%= t("devise_views.users.registrations.new.title") %></h2>
+
+<%= render "devise/omniauth_form" %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "shared/errors", resource: resource %>
+
+  <p>
+    <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
+  </p>
+
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
+      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
+                                   placeholder: t("devise_views.users.registrations.new.username_label"),
+                                   hint: t("devise_views.users.registrations.new.username_note") %>
+
+      <%= f.invisible_captcha :address %>
+
+      <%= f.email_field :email, placeholder: t("devise_views.users.registrations.new.email_label") %>
+
+      <%= f.select :gender, options_for_select([[t("devise_views.users.registrations.new.gender.male"), 'male'],[t("devise_views.users.registrations.new.gender.female"), 'female']]), { include_blank: false }, label: t("devise_views.users.registrations.new.gender_label") %>
+
+      <%= f.date_field :date_of_birth, label: t("devise_views.users.registrations.new.date_of_birth_label") %>
+
+      <%= f.select :state, options_for_select([
+          [t("devise_views.users.registrations.new.state.south_west"), 'south_west'],
+          [t("devise_views.users.registrations.new.state.somaliland"), 'somaliland'],
+          [t("devise_views.users.registrations.new.state.puntland"), 'puntland'],
+          [t("devise_views.users.registrations.new.state.jubaland"), 'jubaland'],
+          [t("devise_views.users.registrations.new.state.hirshabelle"), 'hirshabelle'],
+          [t("devise_views.users.registrations.new.state.galmudug"), 'galmudug'],
+        ]), { include_blank: false }, label: t("devise_views.users.registrations.new.state_label") %>
+
+      <%= f.select :district, options_for_select([
+          [t("devise_views.users.registrations.new.district.ayn"), 'ayn'],
+          [t("devise_views.users.registrations.new.district.bari"), 'bari'],
+          [t("devise_views.users.registrations.new.district.mudug"), 'mudug'],
+          [t("devise_views.users.registrations.new.district.sanaag"), 'sanaag'],
+          [t("devise_views.users.registrations.new.district.sool"), 'sool'],
+          [t("devise_views.users.registrations.new.district.nugaal"), 'nugaal'],
+          [t("devise_views.users.registrations.new.district.nugaal-burtinle"), 'nugaal-burtinle'],
+          [t("devise_views.users.registrations.new.district.nugaal-eyl"), 'nugaal-eyl'],
+          [t("devise_views.users.registrations.new.district.nugaal-garowe"), 'nugaal-garowe'],
+          [t("devise_views.users.registrations.new.district.nugaal-dangorayo"), 'nugaal-dangorayo'],
+          [t("devise_views.users.registrations.new.district.nugaal-xarxar"), 'nugaal-xarxar'],
+        ]), { include_blank: false }, label: t("devise_views.users.registrations.new.district_label") %>
+
+      <%= f.select :last_education_degree, options_for_select([
+          [t("devise_views.users.registrations.new.last_education_degree.non"), 'non'],
+          [t("devise_views.users.registrations.new.last_education_degree.primary_elementary"), 'primary_elementary'],
+          [t("devise_views.users.registrations.new.last_education_degree.preparatory"), 'preparatory'],
+          [t("devise_views.users.registrations.new.last_education_degree.secondary"), 'secondary'],
+          [t("devise_views.users.registrations.new.last_education_degree.bachelor"), 'bachelor'],
+          [t("devise_views.users.registrations.new.last_education_degree.diploma"), 'diploma'],
+          [t("devise_views.users.registrations.new.last_education_degree.masters"), 'masters'],
+          [t("devise_views.users.registrations.new.last_education_degree.phd"), 'phd'],
+        ]), { include_blank: false }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
+      
+
+      <%= f.password_field :password, autocomplete: "off",
+                           placeholder: t("devise_views.users.registrations.new.password_label") %>
+
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+                           label: t("devise_views.users.registrations.new.password_confirmation_label"),
+                           placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+
+
+
+
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code %>
+      <% end %>
+
+      <%= f.check_box :terms_of_service,
+        title: t("devise_views.users.registrations.new.terms_title"),
+        label: t("devise_views.users.registrations.new.terms",
+                 terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+                                title: t("shared.target_blank"),
+                                target: "_blank")
+                ) %>
+
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

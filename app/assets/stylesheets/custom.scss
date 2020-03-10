@@ -27,6 +27,10 @@
 .button-secondary {
     background-color: $secondary;
 }
+.text-center {
+  text-align: center;
+}
+
 /*************************************************/
 /* 02. Header */
 /*************************************************/
@@ -475,6 +479,18 @@ header {
  .search-form-header [type=text] {
    max-width: none;
  }
+
+
+
+/*************************************************/
+/* 06. Images */
+/*************************************************/
+.img-caption {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
 
 
 /*************************************************/
