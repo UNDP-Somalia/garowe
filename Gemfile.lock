@@ -144,6 +144,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    countries (3.0.1)
+      i18n_data (~> 0.10.0)
+      sixarm_ruby_unaccent (~> 1.1)
+      unicode_utils (~> 1.4)
+    country_select (4.0.0)
+      countries (~> 3.0)
+      sort_alphabetical (~> 1.0)
     coveralls (0.8.22)
       json (>= 1.8, < 3)
       simplecov (~> 0.16.1)
@@ -279,6 +286,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
+    i18n_data (0.10.0)
     ice_nine (0.11.2)
     initialjs-rails (0.2.0.5)
       railties (>= 3.1, < 6.0)
@@ -522,10 +530,13 @@ GEM
     simplecov-html (0.10.2)
     sitemap_generator (6.0.2)
       builder (~> 3.0)
+    sixarm_ruby_unaccent (1.2.0)
     smart_properties (1.13.1)
     social-share-button (1.1.0)
       coffee-rails
     socksify (1.7.1)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -570,6 +581,7 @@ GEM
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.6.0)
+    unicode_utils (1.4.0)
     uniform_notifier (1.11.0)
     user_agent_parser (2.4.1)
     uuidtools (2.1.5)
@@ -614,6 +626,7 @@ DEPENDENCIES
   capybara-webmock (~> 0.5.3)
   ckeditor (~> 4.3.0)
   cocoon (~> 1.2.9)
+  country_select (~> 4.0)
   coveralls (~> 0.8.22)
   daemons (~> 1.2.4)
   dalli (~> 2.7.6)
@@ -688,4 +701,4 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.4)
 
 BUNDLED WITH
-   1.17.1
+   2.1.4
