@@ -11,6 +11,11 @@ require "spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "view_component/test_helpers"
+
+RSpec.configure do |config|
+  config.include ViewComponent::TestHelpers, type: :component
+end
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
@@ -26,10 +31,6 @@ RSpec.configure do |config|
   end
 end
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
-
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     "goog:chromeOptions" => {
@@ -43,8 +44,6 @@ Capybara.register_driver :headless_chrome do |app|
     desired_capabilities: capabilities
   )
 end
-
-Capybara.javascript_driver = :headless_chrome
 
 Capybara.exact = true
 

@@ -72,10 +72,6 @@ en:
         budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Ballots
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
@@ -117,7 +113,6 @@ en:
     budget_groups:
       name: "Name"
       headings_name: "Headings"
-      headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
       amount:
@@ -133,6 +128,7 @@ en:
       form:
         create: "Create new group"
         edit: "Edit group"
+        max_votable_headings_info: "Only applies to the selecting projects phase. During the voting projects phase users can only vote in one heading per group."
         submit: "Save group"
       index:
         back: "Go back to budgets"
@@ -149,6 +145,7 @@ en:
         success_notice: "Heading deleted successfully"
         unable_notice: "You cannot delete a Heading that has associated investments"
       form:
+        max_ballot_lines_info: 'Maximum number of projects a user can vote on this heading during the "Voting projects" phase. Only for budgets using approval voting.'
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
         content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
@@ -295,8 +292,6 @@ en:
         table_name: Name
         table_description: Description
         table_actions: Actions
-        delete: Delete
-        edit: Edit
       edit:
         title: Edit milestone status
       update:
@@ -359,8 +354,6 @@ en:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
-          edit: Edit
-          delete: Delete
           active: 'Yes'
           inactive: 'No'
           title: Resources and actions
@@ -495,7 +488,6 @@ en:
           banner_title: Header colors
         index:
           create: New process
-          delete: Delete
           title: Collaborative legislation
           filters:
             active: Active
@@ -553,6 +545,7 @@ en:
           back: Back
           submit_button: Save changes
           warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+          markdown_changes_message: "You've edited the text without saving it. Do you confirm to leave the page?"
         form:
           title: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
           launch_text_editor: Launch text editor
@@ -626,7 +619,6 @@ en:
         no_managers: There are no managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: User search"
     menu:
@@ -706,7 +698,6 @@ en:
         no_administrators: There are no administrators.
       administrator:
         add: Add
-        delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
@@ -721,7 +712,6 @@ en:
         no_moderators: There are no moderators.
       moderator:
         add: Add
-        delete: Delete
       search:
         title: "Moderators: User search"
     segment_recipient:
@@ -748,8 +738,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: There are no newsletters to show
       new:
@@ -785,8 +773,6 @@ en:
         sent: Sent
         actions: Actions
         draft: Draft
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: View
         empty_notifications: There are no notifications to show
@@ -884,7 +870,6 @@ en:
         can_edit_dossier: "Can edit dossier"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Valuators: User search"
       form:
@@ -1218,7 +1203,7 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There are no hidden proposals.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filter
         filters:
@@ -1298,7 +1283,6 @@ en:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
@@ -1306,8 +1290,6 @@ en:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code
@@ -1439,6 +1421,8 @@ en:
         help: "When a user creates a proposal, the following topics are suggested as default tags."
     users:
       columns:
+        id: ID
+        erase_reason: Erase reason
         name: Name
         email: Email
         document_number: Document number
@@ -1447,6 +1431,10 @@ en:
       index:
         title: User
         no_users: There are no users.
+        filter: Filter
+        filters:
+          active: Active
+          erased: Erased
       search:
         placeholder: Search user by email, name or document number
         search: Search

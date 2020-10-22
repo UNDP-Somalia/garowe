@@ -72,10 +72,6 @@ es:
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        table_admin_ballots: Urnas
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
@@ -117,7 +113,6 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
       amount:
@@ -133,6 +128,7 @@ es:
       form:
         create: "Crear nuevo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
       index:
         back: "Volver a presupuestos"
@@ -149,6 +145,7 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
+        max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
         content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
@@ -295,8 +292,6 @@ es:
         table_name: Nombre
         table_description: Descripción
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar
       edit:
         title: Editar estado de seguimiento
       update:
@@ -359,8 +354,6 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          edit: Editar
-          delete: Borrar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -495,7 +488,6 @@ es:
           banner_title: Colores del encabezado
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
             active: Activos
@@ -552,6 +544,7 @@ es:
           back: Volver
           submit_button: Guardar cambios
           warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+          markdown_changes_message: "Ojo, has editado el texto; perderás los cambios si abandonas la página. ¿Seguro que quieres continuar?"
         form:
           title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto
@@ -625,7 +618,6 @@ es:
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
     menu:
@@ -705,7 +697,6 @@ es:
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
@@ -720,7 +711,6 @@ es:
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -747,8 +737,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         empty_newsletters: No hay newsletters para mostrar
       new:
@@ -784,8 +772,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         view: Visualizar
         empty_notifications: No hay notificaciones para mostrar
@@ -883,7 +869,6 @@ es:
         can_edit_dossier: "Puede editar informes"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
@@ -1217,7 +1202,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filtro
         filters:
@@ -1297,7 +1282,6 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
-      delete: Eliminar
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
@@ -1305,8 +1289,6 @@ es:
       index:
         title: Zonas
         create: Crear una zona
-        edit: Editar
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -1438,6 +1420,8 @@ es:
         help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
     users:
       columns:
+        id: ID
+        erase_reason: Razón de la baja
         name: Nombre
         email: Email
         document_number: Número de documento
@@ -1446,6 +1430,10 @@ es:
       index:
         title: Usuarios
         no_users: No hay usuarios.
+        filter: Filtro
+        filters:
+          active: Activos
+          erased: Borrados
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar
