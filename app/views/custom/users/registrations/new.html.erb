@@ -30,27 +30,55 @@
       <%= f.date_field :date_of_birth, label: t("devise_views.users.registrations.new.date_of_birth_label") %>
 
       <%= f.select :state, options_for_select([
-          [t("devise_views.users.registrations.new.state.south_west"), 'south_west'],
-          [t("devise_views.users.registrations.new.state.somaliland"), 'somaliland'],
-          [t("devise_views.users.registrations.new.state.puntland"), 'puntland'],
-          [t("devise_views.users.registrations.new.state.jubaland"), 'jubaland'],
-          [t("devise_views.users.registrations.new.state.hirshabelle"), 'hirshabelle'],
-          [t("devise_views.users.registrations.new.state.galmudug"), 'galmudug'],
+          [t("devise_views.users.registrations.new.state.inside"), 'Inside Garowe Town'],
+          [t("devise_views.users.registrations.new.state.outside"), 'Outside Garowe Town'],
         ]), { include_blank: false }, label: t("devise_views.users.registrations.new.state_label") %>
 
       <%= f.select :district, options_for_select([
-          [t("devise_views.users.registrations.new.district.ayn"), 'ayn'],
-          [t("devise_views.users.registrations.new.district.bari"), 'bari'],
-          [t("devise_views.users.registrations.new.district.mudug"), 'mudug'],
-          [t("devise_views.users.registrations.new.district.sanaag"), 'sanaag'],
-          [t("devise_views.users.registrations.new.district.sool"), 'sool'],
-          [t("devise_views.users.registrations.new.district.nugaal"), 'nugaal'],
-          [t("devise_views.users.registrations.new.district.nugaal-burtinle"), 'nugaal-burtinle'],
-          [t("devise_views.users.registrations.new.district.nugaal-eyl"), 'nugaal-eyl'],
-          [t("devise_views.users.registrations.new.district.nugaal-garowe"), 'nugaal-garowe'],
-          [t("devise_views.users.registrations.new.district.nugaal-dangorayo"), 'nugaal-dangorayo'],
-          [t("devise_views.users.registrations.new.district.nugaal-xarxar"), 'nugaal-xarxar'],
-        ]), { include_blank: false }, label: t("devise_views.users.registrations.new.district_label") %>
+          [t("devise_views.users.registrations.new.district.1da-august"), '1da-august'],
+          [t("devise_views.users.registrations.new.district.halgan"), 'halgan'],
+          [t("devise_views.users.registrations.new.district.hodan"), 'hodan'],
+          [t("devise_views.users.registrations.new.district.horseed"), 'horseed'],
+          [t("devise_views.users.registrations.new.district.israac"), 'israac'],
+          [t("devise_views.users.registrations.new.district.waaberi"), 'waaberi'],
+          [t("devise_views.users.registrations.new.district.wadajir"), 'wadajir'],
+          [t("devise_views.users.registrations.new.district.jillab"), 'jillab']
+        ]), { include_blank: false }, id: "districts_1" %>
+
+        <%= f.select :district, options_for_select([
+          [t("devise_views.users.registrations.new.district.reemanti"), 'reemanti'],
+            [t("devise_views.users.registrations.new.district.qalanqal"), 'qalanqal'],
+            [t("devise_views.users.registrations.new.district.berri cad"), 'berri cad'],
+            [t("devise_views.users.registrations.new.district.laqlajis"), 'laqlajis'],
+            [t("devise_views.users.registrations.new.district.awr-culus"), 'awr-culus'],
+            [t("devise_views.users.registrations.new.district.yoombays"), 'yoombays'],
+            [t("devise_views.users.registrations.new.district.dudumaale"), 'dudumaale'],
+            [t("devise_views.users.registrations.new.district.xamxamaa"), 'xamxamaa'],
+            [t("devise_views.users.registrations.new.district.qabaal"), 'qabaal'],
+            [t("devise_views.users.registrations.new.district.shaf-garas"), 'shaf-garas'],
+            [t("devise_views.users.registrations.new.district.sunijiif"), 'sunijiif'],
+            [t("devise_views.users.registrations.new.district.cuun"), 'cuun'],
+            [t("devise_views.users.registrations.new.district.seega-dheer"), 'seega-dheer'],
+            [t("devise_views.users.registrations.new.district.timirka"), 'timirka'],
+            [t("devise_views.users.registrations.new.district.caanoyaskax"), 'caanoyaskax'],
+            [t("devise_views.users.registrations.new.district.xamur"), 'xamur'],
+            [t("devise_views.users.registrations.new.district.balley"), 'balley'],
+            [t("devise_views.users.registrations.new.district.labiyo-labaatanad"), 'labiyo-labaatanad'],
+            [t("devise_views.users.registrations.new.district.salaxley"), 'salaxley'],
+            [t("devise_views.users.registrations.new.district.dod hays"), 'dod hays'],
+            [t("devise_views.users.registrations.new.district.rabaable"), 'rabaable'],
+            [t("devise_views.users.registrations.new.district.xaliimo-dheer"), 'xaliimo-dheer'],
+            [t("devise_views.users.registrations.new.district.ilma-adeer"), 'ilma-adeer'],
+            [t("devise_views.users.registrations.new.district.birta-dheer"), 'birta-dheer'],
+            [t("devise_views.users.registrations.new.district.abaarey"), 'abaarey'],
+            [t("devise_views.users.registrations.new.district.kalabayr"), 'kalabayr'],
+            [t("devise_views.users.registrations.new.district.ceel-wacays"), 'ceel-wacays'],
+            [t("devise_views.users.registrations.new.district.kalqore"), 'kalqore'],
+            [t("devise_views.users.registrations.new.district.ooman"), 'ooman'],
+            [t("devise_views.users.registrations.new.district.dacarre"), 'dacarre']
+        ]), { include_blank: false, label: false }, id: "districts_2" %>
+
+
 
       <%= f.select :last_education_degree, options_for_select([
           [t("devise_views.users.registrations.new.last_education_degree.non"), 'non'],
@@ -62,7 +90,7 @@
           [t("devise_views.users.registrations.new.last_education_degree.masters"), 'masters'],
           [t("devise_views.users.registrations.new.last_education_degree.phd"), 'phd'],
         ]), { include_blank: false }, label: t("devise_views.users.registrations.new.last_education_degree_label") %>
-      
+
 
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.users.registrations.new.password_label") %>

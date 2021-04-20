@@ -49,7 +49,7 @@ so:
           submit: Isdiwaan geli
           title: Diiwaangelin sida urur ama wadajir
         success:
-          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          back_to_index: "Waan fahmay: kunoqo boga wayn"
           instructions_1_html: "<strong> Waxaan si dhakhso ah kuu la soo xiriiri doonaa </ strong> si aan u xaqiijino in aad xaqiiqda ku sameysid wakiilkan."
           instructions_2_html: Inkastoo aad <strong> emailka dib u eegis </ strong>, waxaan kuu soo dirnay link <strong> si aan u xaqiijino koontadaada </ strong>.
           instructions_3_html: Markii la xaqiijiyo, waxaad bilaabi kartaa inaad kaqaybqaadato sidii koox aan la aqoonsaneyn.
@@ -126,30 +126,56 @@ so:
             female: Dhedig
           gender_label: Jinsiga
           district:
-            ayn: Ayn
-            bari: Bari
-            mudug: Mudug
-            nugaal: Nugaal
-            sanaag: Sanaag
-            sool: Sool
-            nugaal-burtinle: Nugaal - Burtinle
-            nugaal-eyl: Nugaal - Eyl
-            nugaal-garowe: Nugaal - Garowe
-            nugaal-dangorayo: Nugaal - Dangorayo
-            nugaal-xarxar: Nugaal - Xarxar
+            1da-august: 1da August
+            hantiwadaag: Hantiwadaag
+            halgan: Halgan
+            hodan: Hodan
+            horseed: Horseed
+            israac: Israac
+            waaberi: Waaberi
+            wadajir: Wadajir
+            jillab: Jillab
+
+            reemanti: Reemanti
+            qalanqal: Qalanqal
+            berri cad: Berri cad
+            laqlajis: Laqlajis
+            awr-culus: Awr culus
+            yoombays: Yoombays
+            dudumaale: Dudumaale
+            xamxamaa: Xamxamaa
+            qabaal: Qabaal
+            shaf-garas: shaf garas
+            sunijiif: Sunijiif
+            cuun: Cuun
+            seega-dheer: Seega dheer
+            timirka: Timirka
+            caanoyaskax: Caanoyaskax
+            xamur: Xamur
+            balley: Balley
+            labiyo-labaatanad: Labiyo labaatanad
+            salaxley: Salaxley
+            dod hays: Dod hays
+            rabaable: Rabaable
+            xaliimo-dheer: Xaliimo dheer
+            ilma-adeer: Ilma adeer
+            birta-dheer: Birta dheer
+            abaarey: Abaarey
+            kalabayr: Kalabayr
+            ceel-wacays: Ceel wacays
+            kalqore: Kalqore
+            ooman: Ooman
+            dacarre: Dacarre
+
           district_label: Degmo
           state:
-            south_west: South West
-            somaliland: Somaliland
-            puntland: Puntland
-            jubaland: Jubaland
-            hirshabelle: Hirshabelle
-            galmudug: Galmudug
+            inside: Inside Garowe Town
+            outside: Outside Garowe Town
           state_label: Gobol
           date_of_birth_label: Taariikhda Dhalashada
           last_education_degree:
             non: Maya
-            primary_elementary:  Hoose
+            primary_elementary: Hoose
             preparatory: Diyaarinta
             secondary: Labaad
             bachelor: Doob
@@ -158,7 +184,7 @@ so:
             phd: PhD
           last_education_degree_label: Shahaado waxbarasho ee ugu dambeysay
         success:
-          back_to_index: 'Waan fahmay: kunoqo boga wayn'
+          back_to_index: "Waan fahmay: kunoqo boga wayn"
           instructions_1_html: Fadlan <b> Eeg emailkaaga </ b> - waxaan kuu soo dirnay link <b> link si loo xaqiijiyo koontadaada </ b>.
           instructions_2_html: Marka la xaqiijiyo, waxaad bilaabi kartaa ka qaybqaadashada.
           thank_you_html: Waad ku mahadsantahay diiwaangelinta boggaga internetka. Hadda waa inaad <b> xaqiijisaa cinwaanka emailkaaga </ b>.
